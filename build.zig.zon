@@ -1,0 +1,34 @@
+// © 2024 Carl Åstholm
+// SPDX-License-Identifier: MIT
+
+.{
+    .name = .sdl,
+    .version = "0.2.4+3.2.16",
+    .fingerprint = 0xec638ccbf427e2ee,
+    .minimum_zig_version = "0.15.0-dev.877+0adcfd60f",
+    .dependencies = .{
+        .sdl_linux_deps = .{
+            .url = "git+https://github.com/castholm/SDL_linux_deps.git#085212f286621835f2638cb0cfff078fe515341a",
+            .hash = "sdl_linux_deps-0.0.0-Vy5_h4AlfwBtG7MIPe7ZNUANhmYLek_SA140uYk9SrED",
+            .lazy = true,
+        },
+        .translate_c = .{
+            .url = "git+https://github.com/ziglang/translate-c#fe42c2e41d125de3c10abaa06a6863e9c3176752",
+            .hash = "translate_c-0.0.0-Q_BUWiV6BgBoUHoPqMVWnYJz1aZKcIFyR7POHUuZ19xE",
+        },
+        .sdl_upstream = .{
+            .url = "git+https://github.com/vinterbell/SDL#5e787555e8f6393a0452bcf7cd244416b17affbc",
+            .hash = "N-V-__8AADc8qQNAAdXAUHksi2TWZCt3QtJ8sANyK7scuOWc",
+        },
+    },
+    .paths = .{
+        "include/",
+        "src/",
+        "build.zig",
+        "build.zig.zon",
+
+        "LICENSES/",
+        "LICENSE.txt",
+        "REUSE.toml",
+    },
+}
