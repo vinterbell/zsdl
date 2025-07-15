@@ -12,13 +12,9 @@
             .hash = "sdl_linux_deps-0.0.0-Vy5_h4AlfwBtG7MIPe7ZNUANhmYLek_SA140uYk9SrED",
             .lazy = true,
         },
-        .translate_c = .{
-            .url = "git+https://github.com/ziglang/translate-c#fe42c2e41d125de3c10abaa06a6863e9c3176752",
-            .hash = "translate_c-0.0.0-Q_BUWiV6BgBoUHoPqMVWnYJz1aZKcIFyR7POHUuZ19xE",
-        },
         .sdl_upstream = .{
-            .url = "git+https://github.com/vinterbell/SDL#5e787555e8f6393a0452bcf7cd244416b17affbc",
-            .hash = "N-V-__8AADc8qQNAAdXAUHksi2TWZCt3QtJ8sANyK7scuOWc",
+            .url = "git+https://github.com/vinterbell/SDL#d5efb11f97787ac074b65979e8244c0815253afc",
+            .hash = "N-V-__8AAJdIqQOZJKVLSrhSkxtoudt45zNld1cWVQb9Y94l",
         },
     },
     .paths = .{

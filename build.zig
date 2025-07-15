@@ -3,8 +3,6 @@
 
 const std = @import("std");
 
-const Translator = @import("translate_c").Translator;
-
 pub const version: std.SemanticVersion = .{ .major = 3, .minor = 3, .patch = 0 };
 const formatted_version = std.fmt.comptimePrint("SDL3-{}", .{version});
 pub const vendor_info = "https://github.com/castholm/SDL 0.2.4";
@@ -572,9 +570,8 @@ pub fn build(b: *std.Build) void {
         "-Wimplicit-fallthrough",
     };
 
-    const translate_c = b.dependency("translate_c", .{});
-    const t: Translator = .init(translate_c, .{
-        .c_source_file = b.addWriteFiles().add("translate.h",
+    const t = b.addTranslateC(.{
+        .root_source_file = b.addWriteFiles().add("translate.h",
             \\#include <SDL3/SDL.h>
             \\#define SDL_MAIN_HANDLED 1
             \\#define SDL_MAIN_USE_CALLBACKS 1
@@ -612,16 +609,15 @@ pub fn build(b: *std.Build) void {
     }
 
     const sdl3_mod = b.addModule("sdl3", .{
-        .root_source_file = t.output_file,
+        .root_source_file = .{ .generated = .{
+            .file = &t.output_file,
+        } },
         .target = target,
         .optimize = optimize,
         .strip = strip,
         .sanitize_c = resolved_sanitize_c,
         .pic = pic,
-        .imports = &.{
-            .{ .name = "c_builtins", .module = translate_c.module("c_builtins") },
-            .{ .name = "helpers", .module = translate_c.module("helpers") },
-        },
+        .imports = &.{},
     });
     sdl3_mod.linkLibrary(sdl_lib);
 
