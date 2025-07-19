@@ -5,7 +5,7 @@
     .name = .sdl,
     .version = "0.2.4+3.2.16",
     .fingerprint = 0xec638ccbf427e2ee,
-    .minimum_zig_version = "0.15.0-dev.877+0adcfd60f",
+    .minimum_zig_version = "0.15.0-dev.1145+3ae0ba096",
     .dependencies = .{
         .sdl_linux_deps = .{
             .url = "git+https://github.com/castholm/SDL_linux_deps.git#085212f286621835f2638cb0cfff078fe515341a",
@@ -13,8 +13,8 @@
             .lazy = true,
         },
         .sdl_upstream = .{
-            .url = "git+https://github.com/vinterbell/SDL#d5efb11f97787ac074b65979e8244c0815253afc",
-            .hash = "N-V-__8AAJdIqQOZJKVLSrhSkxtoudt45zNld1cWVQb9Y94l",
+            .url = "git+https://github.com/vinterbell/SDL#8bd29f7ca3612af10fc2ca54bce6b5ca01091e97",
+            .hash = "N-V-__8AADgDqgNS-ubIH2hQliBLJwBIUClDAqvJ8eP_4K1M",
         },
     },
     .paths = .{
